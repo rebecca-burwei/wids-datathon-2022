@@ -1,0 +1,1 @@
+Git does not track empty folders. This is a placeholder/dummy file to make sure that Git tracks the data/ folder even though it is empty.
