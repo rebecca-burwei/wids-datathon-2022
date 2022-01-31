@@ -13,6 +13,31 @@ Every week, each team member should aim to:
 * Make at least one contribution to the codebase (open a pull request)
 * Review a pull request from another team member
 
+# Week 2
+This week, we will explore the data, understand what the fields mean, and look into different ways to preprocess the data.
+
+## Task 1 -- Exploring the data
+Take a look at the data and see if there is anything interesting or unusual about the data. Real world data is very messy and usually requires some cleaning up. I think this Kaggle dataset is quite clean, but it doesn't hurt to go through the exercise. Some questions to consider:
+
+* Are there any fields with lots of missing values? What should we do about them (leave out, impute values, simulate values from a distribution, etc)?
+* Are there any unusual distributions in the data? 
+  * For example, I noticed that the distribution of elevations in test.csv is quite strange.
+  * The distribution of the target variable is particularly important. Models will be biased towards mimicking the same distribution they are trained on.
+  * It's important to notice when the distribution of the test and train data is different. We'll be evaluated on the test data, but only able to build models on the train data, so it's best when the two distributions are similar. If they are not similar, it may be helpful to weight the train data so it's more similar to the test data.
+* Are there any outliers?
+
+Resources:
+* This [Kaggle notebook](https://www.kaggle.com/ccollado7/wids-complete-eda#3.-Analysis---Train-dataset) has some useful code for making lots of plots.
+* This [Kaggle notebook](https://www.kaggle.com/farazrahman/bee-building-energy-efficiency-eda#2-|-EDA) has some interesting insights about the dataset.
+ 
+## Task 2 -- Preprocessing by field type
+There are 3 types of fields in this data: continuous (e.g., floor_area, avg_temp), categorical (e.g., building_class, facility_type) and ordered discrete (e.g., year_built, energy_star_rating, days_with_fog). A common interview question: What are some ways to preprocess each type of field, and what are the pros and cons of each preprocessing method?
+
+Here are some common ways to preprocess each type of field:
+* Continuous fields: use a log scale, normalize, no preprocessing
+* Categorical fields: make dummy variables (and optionally apply a [dimension reduction](https://scikit-learn.org/stable/modules/unsupervised_reduction.html#pca-principal-component-analysis)), group some categories together or organize the categories into a hierarchy, use a pre-trained word embedding for longer text fields
+* Ordered discrete: usually you just pretend these are either continuous or categorical
+
 # Week 1
 This week, you should download the data from Kaggle, set up your local computing environment in Python, and familiarize yourself with Git and GitHub.
 
