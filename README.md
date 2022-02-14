@@ -13,7 +13,7 @@ Every week, each team member should aim to:
 * Make at least one contribution to the codebase (open a pull request)
 * Review a pull request from another team member
 
-# Week 3
+# Week 3-4
 This week, we will build some initial models.
 
 ## Task -- Build a baseline model
